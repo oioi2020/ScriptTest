@@ -7,6 +7,7 @@ public class Boss {
 	private int power = 25; //攻撃力
 	// ------------- 課題 ----------------
 	private int mp = 53; //魔力
+	int sum = 0;
 	//攻撃用の関数
 	public void Attack(){
 		Debug.Log ( this.power + "のダメージを与えた");
@@ -31,13 +32,14 @@ public class Boss {
 
 		//}
 		//mpが足りている場合
-		if (mp > 5) {
+		if (mp >= 5) {
 			//mpを減らす
 			this.mp -= 5 * mgc;
 			//減らしたmpで魔法攻撃の表示
 			Debug.Log ("魔法攻撃をした。残りのMPは" + this.mp + "。");
 		} else {
 			Debug.Log ( "MPが足りないため魔法が使えない。");
+			int sum = 1;
 		}
 	}
 }
@@ -228,17 +230,20 @@ public class Test : MonoBehaviour {
 		//防御用関数を呼び出す
 		lastboss.Defence (3);
 		// ------------- 課題 ----------------
-		lastboss.Magic (1); //1回目
-		lastboss.Magic (1); //2回目
-		lastboss.Magic (1); //3回目
-		lastboss.Magic (1); //4回目
-		lastboss.Magic (1); //5回目
-		lastboss.Magic (1); //6回目
-		lastboss.Magic (1); //7回目
-		lastboss.Magic (1); //8回目
-		lastboss.Magic (1); //9回目
-		lastboss.Magic (1); //10回目
-		lastboss.Magic (1); //魔力切れ
+		//lastboss.Magic (1); //1回目
+		//lastboss.Magic (1); //2回目
+		//lastboss.Magic (1); //3回目
+		//lastboss.Magic (1); //4回目
+		//lastboss.Magic (1); //5回目
+		//lastboss.Magic (1); //6回目
+		//lastboss.Magic (1); //7回目
+		//lastboss.Magic (1); //8回目
+		//lastboss.Magic (1); //9回目
+		//lastboss.Magic (1); //10回目
+		//lastboss.Magic (1); //魔力切れ
+		for (int i = 0; i < 11; i++) {
+			lastboss.Magic (1);
+		}
 	}
 
 		// ------------- 課題 ----------------
